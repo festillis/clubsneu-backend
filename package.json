@@ -1,0 +1,41 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev graphql/index.ts",
+    "functions:deploy": "cd functions && yarn use && yarn deploy",
+    "prisma:gen": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:pull": "npx prisma db pull",
+    "prisma:studio": "npx prisma studio",
+    "gql": "rimraf ./graphql/generated && npx graphql-codegen --config ./graphql/codegen.ts"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/typescript": "^3.0.4",
+    "@graphql-codegen/typescript-resolvers": "^3.2.1",
+    "@types/node": "^18.16.1",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prisma": "^4.13.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.7.0",
+    "@aws-sdk/client-sesv2": "^3.321.1",
+    "@graphql-tools/graphql-file-loader": "^7.5.17",
+    "@graphql-tools/load": "^7.8.14",
+    "@graphql-tools/schema": "^9.0.19",
+    "@graphql-yoga/plugin-disable-introspection": "^0.8.1",
+    "@prisma/client": "^4.13.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.15.0",
+    "firebase-admin": "^11.7.0",
+    "graphql": "^16.6.0",
+    "graphql-scalars": "^1.21.3",
+    "graphql-yoga": "^3.9.1"
+  }
+}

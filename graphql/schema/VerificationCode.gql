@@ -1,0 +1,11 @@
+type VerificationCode {
+  email: String!
+  code: String!
+  updatedAt: DateTime!
+  verified: Boolean!
+}
+
+type Mutation {
+  setVerificationCode(email: String!): Boolean!
+  verifyCode(email: String!, code: String!): Boolean!
+}
