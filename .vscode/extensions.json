@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "kumar-harsh.graphql-for-vscode",
     "dbaeumer.vscode-eslint",
-    "Prisma.prisma"
+    "Prisma.prisma",
+    "yoavbls.pretty-ts-errors"
   ]
 }
