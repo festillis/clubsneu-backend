@@ -1,29 +1,16 @@
 import { SESv2Client, SendEmailCommand, SendEmailCommandInput } from '@aws-sdk/client-sesv2';
-import { loadEnv } from '../utils';
 
-loadEnv();
-
-const ses = new SESv2Client({
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  },
-  region: process.env.AWS_REGION
-});
-
-interface EmailService {
-  sendEmail: ({
-    email,
-    subject,
-    body
-  }: {
-    email: string;
-    subject: string;
-    body: string;
-  }) => Promise<string | undefined>;
+interface SendEmailInput {
+  email: string;
+  subject: string;
+  body: string;
 }
 
-const emailService = (): EmailService => {
+interface EmailService {
+  sendEmail: (input: SendEmailInput) => Promise<string | undefined>;
+}
+
+const emailService = (ses: SESv2Client): EmailService => {
   const getParams = (email: string, subject: string, body: string): SendEmailCommandInput => {
     return {
       FromEmailAddress: process.env.SENDER_EMAIL,
@@ -45,15 +32,8 @@ const emailService = (): EmailService => {
     };
   };
 
-  const sendEmail = async ({
-    email,
-    subject,
-    body
-  }: {
-    email: string;
-    subject: string;
-    body: string;
-  }) => {
+  const sendEmail = async (input: SendEmailInput) => {
+    const { email, subject, body } = input;
     const command = new SendEmailCommand(getParams(email, subject, body));
     const response = await ses.send(command);
     return response.MessageId;

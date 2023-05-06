@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 declare interface EnvVars {
   // ENVIRONMENT
-  NODE_ENV: 'development' | 'production';
+  readonly NODE_ENV: 'development' | 'production';
 
   // AWS
-  AWS_REGION: string;
-  AWS_ACCESS_KEY_ID: string;
-  AWS_SECRET_ACCESS_KEY: string;
-  SENDER_EMAIL: string;
+  readonly AWS_REGION: string;
+  readonly AWS_ACCESS_KEY_ID: string;
+  readonly AWS_SECRET_ACCESS_KEY: string;
+  readonly SENDER_EMAIL: string;
 
   // FIREBASE ADMIN
-  FIREBASE_ADMIN_PROJECT_ID: string;
-  FIREBASE_ADMIN_CLIENT_EMAIL: string;
-  FIREBASE_ADMIN_PRIVATE_KEY: string;
+  readonly FIREBASE_ADMIN_PROJECT_ID: string;
+  readonly FIREBASE_ADMIN_CLIENT_EMAIL: string;
+  readonly FIREBASE_ADMIN_PRIVATE_KEY: string;
 
   // GRAPHQL
-  ENABLE_GRAPHQL_DEV_ENV: string;
-  GRAPHQL_PORT: string;
-  GRAPHQL_ENDPOINT: string;
+  readonly ENABLE_GRAPHQL_DEV_ENV: string;
+  readonly GRAPHQL_PORT: string;
+  readonly GRAPHQL_ENDPOINT: string;
 }
 
 declare namespace NodeJS {
