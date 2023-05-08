@@ -3,7 +3,8 @@
     "target": "ESNext",
     "moduleResolution": "nodenext",
     "types": ["node", "jest"],
-    "typeRoots": ["./types/env.d.ts", "./types/global.d.ts"]
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "compileOnSave": true
+  "compileOnSave": true,
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
