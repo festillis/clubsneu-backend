@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "nodenext",
+    "types": ["node", "jest"],
     "typeRoots": ["./types/env.d.ts", "./types/global.d.ts"]
   },
   "compileOnSave": true
