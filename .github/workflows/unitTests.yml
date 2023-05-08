@@ -1,26 +1,22 @@
 # some description
-name: Build workflow
+name: Unit Test Workflow
 
 on: [push, pull_request]
 
-jobs: 
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-        
+          node-version: 18.x
+
       - name: Install dependencies
         run: yarn install
-        
-      #- name: Run tests
-      #  run: yarn test
-        
-      - name: Start development server
-        run: yarn dev
-        
+
+      - name: Run tests
+        run: yarn test
