@@ -7,5 +7,6 @@
   "trailingComma": "none",
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "semi": true
 }

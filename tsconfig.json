@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "target": "ESNext",
     "moduleResolution": "nodenext",
-    "typeRoots": ["./types/env.d.ts", "./types/global.d.ts"]
+    "types": ["node", "jest"],
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "compileOnSave": true
+  "compileOnSave": true,
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
